@@ -18,7 +18,7 @@ ready-to-import profiles so you don't have to re-derive the expressions yourself
 
 1. Open your AIOStreams instance → **Save & Install → Import Template**.
 2. Paste the profile's import URL (from the table above), or the aggregate URL to import all profiles:
-   `https://raw.githubusercontent.com/JCSynthTux/AIOStreams-SEL-Templates/main/templates.json`
+   `https://raw.githubusercontent.com/JCSynthTux/AIOStreams-SEL-Templates/master/templates.json`
 3. Confirm import, then review **Filters** to make sure no native filters conflict with the profile.
 
 > ⚠️ Only import templates from sources you trust.
@@ -32,15 +32,21 @@ sorting logic.
 ```
 AIOStreams-SEL-Templates/
 ├── templates/                 # Full importable templates (metadata + config)
-│   └── german-english-usenet.json
+│   ├── german-english-usenet.json
+│   └── german-usenet.json
 ├── templates.json             # Aggregate: all templates, importable via a single URL
 ├── sel/                       # Raw SEL expression lists (synced-URL format)
-│   └── german-english-usenet/
+│   ├── german-english-usenet/
+│   │   ├── excluded-stream-expressions.json
+│   │   ├── preferred-stream-expressions.json
+│   │   └── ranked-stream-expressions.json
+│   └── german-usenet/
 │       ├── excluded-stream-expressions.json
 │       ├── preferred-stream-expressions.json
 │       └── ranked-stream-expressions.json
 ├── profiles/                  # Detailed documentation per profile
-│   └── german-english-usenet.md
+│   ├── german-english-usenet.md
+│   └── german-usenet.md
 ├── docs/                      # General guides
 │   └── import-guide.md
 ├── CHANGELOG.md

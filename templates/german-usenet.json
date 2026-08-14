@@ -9,7 +9,7 @@
     "category": "Usenet",
     "services": [],
     "serviceRequired": false,
-    "changelogUrl": "https://raw.githubusercontent.com/JCSynthTux/AIOStreams-SEL-Templates/main/CHANGELOG.md"
+    "changelogUrl": "https://raw.githubusercontent.com/JCSynthTux/AIOStreams-SEL-Templates/master/CHANGELOG.md"
   },
   "config": {
     "excludedStreamExpressions": [

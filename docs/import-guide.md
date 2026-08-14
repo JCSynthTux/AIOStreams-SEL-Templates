@@ -10,13 +10,13 @@ There are two ways to use the SEL templates in this repository:
 In AIOStreams, open **Save & Install → Import Template** and paste the URL of a template file:
 
 ```
-https://raw.githubusercontent.com/JCSynthTux/AIOStreams-SEL-Templates/main/templates/german-english-usenet.json
+https://raw.githubusercontent.com/JCSynthTux/AIOStreams-SEL-Templates/master/templates/german-english-usenet.json
 ```
 
 Alternatively, use a deep link (replace the host with your own instance):
 
 ```
-https://your-aiostreams.example.com/stremio/configure?template=https://raw.githubusercontent.com/JCSynthTux/AIOStreams-SEL-Templates/main/templates/german-english-usenet.json
+https://your-aiostreams.example.com/stremio/configure?template=https://raw.githubusercontent.com/JCSynthTux/AIOStreams-SEL-Templates/master/templates/german-english-usenet.json
 ```
 
 > ⚠️ Only import templates from sources you trust.
