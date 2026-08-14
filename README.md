@@ -12,6 +12,7 @@ ready-to-import profiles so you don't have to re-derive the expressions yourself
 | Profile | Description | Import URL |
 | --- | --- | --- |
 | [German + English Usenet (Dual Audio)](profiles/german-english-usenet.md) | Usenet-only; prioritises dual-audio (German + English) over single-audio, HDR over SDR; 2160p/1080p/720p (720p gated behind 5 x 1080p). | [`templates/german-english-usenet.json`](templates/german-english-usenet.json) |
+| [German Usenet](profiles/german-usenet.md) | Usenet-only; German audio only, HDR over SDR; 2160p/1080p/720p (720p gated behind 5 x 1080p). | [`templates/german-usenet.json`](templates/german-usenet.json) |
 
 ## Quick start
 

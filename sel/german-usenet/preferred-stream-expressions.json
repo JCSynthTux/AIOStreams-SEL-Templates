@@ -1,0 +1,10 @@
+[
+  {
+    "expression": "/* German + HDR */ visualTag(language(streams, 'German'), 'HDR', 'DV', 'HDR10', 'HDR10+', 'HLG')",
+    "enabled": true
+  },
+  {
+    "expression": "/* German + SDR */ negate(visualTag(language(streams, 'German'), 'HDR', 'DV', 'HDR10', 'HDR10+', 'HLG'), language(streams, 'German'))",
+    "enabled": true
+  }
+]
