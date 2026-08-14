@@ -1,0 +1,59 @@
+{
+  "metadata": {
+    "id": "jcsynthtux.german-english-usenet",
+    "name": "German + English Usenet (Dual Audio)",
+    "description": "Usenet-only filtering and sorting profile driven by the Stream Expression Language (SEL).\n\n- Keeps only Usenet releases with **German and/or English** audio.\n- Prioritises **dual-audio** (German + English) over single-audio, and **HDR** over SDR.\n- Limits resolution to **2160p / 1080p / 720p** — 720p is only shown when fewer than 5 x 1080p results exist.\n- Subtitles are not required or filtered.\n\nPriority order (highest first):\n1. Dual Audio + HDR\n2. Dual Audio + SDR\n3. Single Audio + HDR\n4. Single Audio + SDR\n\nSee the [README](https://github.com/JCSynthTux/AIOStreams-SEL-Templates) for full documentation.",
+    "author": "JCSynthTux",
+    "source": "external",
+    "version": "1.0.0",
+    "category": "Usenet",
+    "services": [],
+    "serviceRequired": false,
+    "changelogUrl": "https://raw.githubusercontent.com/JCSynthTux/AIOStreams-SEL-Templates/main/CHANGELOG.md"
+  },
+  "config": {
+    "excludedStreamExpressions": [
+      {
+        "expression": "/* Usenet only */ negate(type(streams, 'usenet', 'stremio-usenet'), streams)",
+        "enabled": true
+      },
+      {
+        "expression": "/* Resolution: 2160p / 1080p / 720p */ negate(resolution(streams, '2160p', '1080p', '720p'), streams)",
+        "enabled": true
+      },
+      {
+        "expression": "/* Audio: German or English */ negate(merge(language(streams, 'German'), language(streams, 'English')), streams)",
+        "enabled": true
+      },
+      {
+        "expression": "/* 720p only when fewer than 5 x 1080p */ count(resolution(streams, '1080p')) >= 5 ? resolution(streams, '720p') : []",
+        "enabled": true
+      }
+    ],
+    "preferredStreamExpressions": [
+      {
+        "expression": "/* Dual Audio + HDR */ visualTag(language(language(streams, 'German'), 'English'), 'HDR', 'DV', 'HDR10', 'HDR10+', 'HLG')",
+        "enabled": true
+      },
+      {
+        "expression": "/* Dual Audio + SDR */ negate(visualTag(language(language(streams, 'German'), 'English'), 'HDR', 'DV', 'HDR10', 'HDR10+', 'HLG'), language(language(streams, 'German'), 'English'))",
+        "enabled": true
+      },
+      {
+        "expression": "/* Single Audio + HDR */ visualTag(negate(language(language(streams, 'German'), 'English'), streams), 'HDR', 'DV', 'HDR10', 'HDR10+', 'HLG')",
+        "enabled": true
+      },
+      {
+        "expression": "/* Single Audio + SDR */ negate(visualTag(negate(language(language(streams, 'German'), 'English'), streams), 'HDR', 'DV', 'HDR10', 'HDR10+', 'HLG'), negate(language(language(streams, 'German'), 'English'), streams))",
+        "enabled": true
+      }
+    ],
+    "sortCriteria": {
+      "global": [
+        { "key": "streamExpressionMatched", "direction": "desc" },
+        { "key": "resolution", "direction": "desc" },
+        { "key": "quality", "direction": "desc" }
+      ]
+    }
+  }
+}

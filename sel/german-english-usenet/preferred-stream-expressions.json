@@ -1,0 +1,18 @@
+[
+  {
+    "expression": "/* Dual Audio + HDR */ visualTag(language(language(streams, 'German'), 'English'), 'HDR', 'DV', 'HDR10', 'HDR10+', 'HLG')",
+    "enabled": true
+  },
+  {
+    "expression": "/* Dual Audio + SDR */ negate(visualTag(language(language(streams, 'German'), 'English'), 'HDR', 'DV', 'HDR10', 'HDR10+', 'HLG'), language(language(streams, 'German'), 'English'))",
+    "enabled": true
+  },
+  {
+    "expression": "/* Single Audio + HDR */ visualTag(negate(language(language(streams, 'German'), 'English'), streams), 'HDR', 'DV', 'HDR10', 'HDR10+', 'HLG')",
+    "enabled": true
+  },
+  {
+    "expression": "/* Single Audio + SDR */ negate(visualTag(negate(language(language(streams, 'German'), 'English'), streams), 'HDR', 'DV', 'HDR10', 'HDR10+', 'HLG'), negate(language(language(streams, 'German'), 'English'), streams))",
+    "enabled": true
+  }
+]
