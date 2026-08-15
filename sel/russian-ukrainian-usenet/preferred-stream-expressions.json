@@ -1,0 +1,10 @@
+[
+  {
+    "expression": "/* Russian/Ukrainian + HDR */ visualTag(merge(language(streams, 'Russian'), language(streams, 'Ukrainian')), 'HDR', 'DV', 'HDR10', 'HDR10+', 'HLG')",
+    "enabled": true
+  },
+  {
+    "expression": "/* Russian/Ukrainian + SDR */ negate(visualTag(merge(language(streams, 'Russian'), language(streams, 'Ukrainian')), 'HDR', 'DV', 'HDR10', 'HDR10+', 'HLG'), merge(language(streams, 'Russian'), language(streams, 'Ukrainian')))",
+    "enabled": true
+  }
+]

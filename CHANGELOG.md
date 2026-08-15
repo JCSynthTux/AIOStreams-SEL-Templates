@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.0 (2026-08-14)
+
+### What's new
+
+- Added the **Russian + Ukrainian Usenet** profile.
+- Russian or Ukrainian audio, HDR over SDR.
+- Resolution limited to 2160p / 1080p / 720p (720p only when fewer than 5 x 1080p results).
+
 ## 1.1.0 (2026-08-14)
 
 ### What's new

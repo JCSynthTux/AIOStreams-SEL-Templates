@@ -1,0 +1,51 @@
+{
+  "metadata": {
+    "id": "jcsynthtux.russian-ukrainian-usenet",
+    "name": "Russian + Ukrainian Usenet",
+    "description": "Usenet-only filtering and sorting profile driven by the Stream Expression Language (SEL).\n\n- Keeps only Usenet releases with **Russian or Ukrainian** audio.\n- Prefers **HDR** over SDR.\n- Limits resolution to **2160p / 1080p / 720p** — 720p is only shown when fewer than 5 x 1080p results exist.\n- Subtitles are not required or filtered.\n\nPriority order (highest first):\n1. Russian/Ukrainian + HDR\n2. Russian/Ukrainian + SDR\n\nSee the [README](https://github.com/JCSynthTux/AIOStreams-SEL-Templates) for full documentation.",
+    "author": "JCSynthTux",
+    "source": "external",
+    "version": "1.0.0",
+    "category": "Usenet",
+    "services": [],
+    "serviceRequired": false,
+    "changelogUrl": "https://raw.githubusercontent.com/JCSynthTux/AIOStreams-SEL-Templates/master/CHANGELOG.md"
+  },
+  "config": {
+    "excludedStreamExpressions": [
+      {
+        "expression": "/* Usenet only */ negate(type(streams, 'usenet', 'stremio-usenet'), streams)",
+        "enabled": true
+      },
+      {
+        "expression": "/* Resolution: 2160p / 1080p / 720p */ negate(resolution(streams, '2160p', '1080p', '720p'), streams)",
+        "enabled": true
+      },
+      {
+        "expression": "/* Audio: Russian or Ukrainian */ negate(merge(language(streams, 'Russian'), language(streams, 'Ukrainian')), streams)",
+        "enabled": true
+      },
+      {
+        "expression": "/* 720p only when fewer than 5 x 1080p */ count(resolution(streams, '1080p')) >= 5 ? resolution(streams, '720p') : []",
+        "enabled": true
+      }
+    ],
+    "preferredStreamExpressions": [
+      {
+        "expression": "/* Russian/Ukrainian + HDR */ visualTag(merge(language(streams, 'Russian'), language(streams, 'Ukrainian')), 'HDR', 'DV', 'HDR10', 'HDR10+', 'HLG')",
+        "enabled": true
+      },
+      {
+        "expression": "/* Russian/Ukrainian + SDR */ negate(visualTag(merge(language(streams, 'Russian'), language(streams, 'Ukrainian')), 'HDR', 'DV', 'HDR10', 'HDR10+', 'HLG'), merge(language(streams, 'Russian'), language(streams, 'Ukrainian')))",
+        "enabled": true
+      }
+    ],
+    "sortCriteria": {
+      "global": [
+        { "key": "streamExpressionMatched", "direction": "desc" },
+        { "key": "resolution", "direction": "desc" },
+        { "key": "quality", "direction": "desc" }
+      ]
+    }
+  }
+}
