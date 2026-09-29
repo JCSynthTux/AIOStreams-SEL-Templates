@@ -26,6 +26,10 @@
         "enabled": true
       },
       {
+        "expression": "/* Exclude AV1 (unsupported by clients) */ negate(encode(streams, 'AV1'), streams)",
+        "enabled": true
+      },
+      {
         "expression": "/* 720p only when fewer than 5 x 1080p */ count(resolution(streams, '1080p')) >= 5 ? resolution(streams, '720p') : []",
         "enabled": true
       }

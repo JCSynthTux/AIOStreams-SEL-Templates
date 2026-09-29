@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.4.0 (2026-09-29)
+
+### What's new
+
+- All profiles now exclude **AV1** encodes (`negate(encode(streams, 'AV1'), streams)`)
+  as none of the clients support AV1.
+
 ## 1.3.0 (2026-09-29)
 
 ### What's new

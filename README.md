@@ -11,10 +11,10 @@ ready-to-import profiles so you don't have to re-derive the expressions yourself
 
 | Profile | Description | Import URL |
 | --- | --- | --- |
-| [German + English Usenet (Dual Audio)](profiles/german-english-usenet.md) | Usenet-only; prioritises dual-audio (German + English) over single-audio, HDR over SDR; 2160p/1080p/720p (720p gated behind 5 x 1080p). | [`templates/german-english-usenet.json`](templates/german-english-usenet.json) |
-| [German Usenet](profiles/german-usenet.md) | Usenet-only; German audio only, HDR over SDR; 2160p/1080p/720p (720p gated behind 5 x 1080p). | [`templates/german-usenet.json`](templates/german-usenet.json) |
-| [Russian + Ukrainian Usenet](profiles/russian-ukrainian-usenet.md) | Usenet-only; Russian or Ukrainian audio, HDR over SDR; 2160p/1080p/720p (720p gated behind 5 x 1080p). | [`templates/russian-ukrainian-usenet.json`](templates/russian-ukrainian-usenet.json) |
-| [Japanese + Korean + Chinese/Mandarin Usenet](profiles/japanese-korean-chinese-usenet.md) | Usenet-only; Japanese, Korean, Chinese or Mandarin audio, English or German subtitles required, HDR over SDR; 2160p/1080p/720p (720p gated behind 5 x 1080p). | [`templates/japanese-korean-chinese-usenet.json`](templates/japanese-korean-chinese-usenet.json) |
+| [German + English Usenet (Dual Audio)](profiles/german-english-usenet.md) | Usenet-only; prioritises dual-audio (German + English) over single-audio, HDR over SDR, AV1 excluded; 2160p/1080p/720p (720p gated behind 5 x 1080p). | [`templates/german-english-usenet.json`](templates/german-english-usenet.json) |
+| [German Usenet](profiles/german-usenet.md) | Usenet-only; German audio only, HDR over SDR, AV1 excluded; 2160p/1080p/720p (720p gated behind 5 x 1080p). | [`templates/german-usenet.json`](templates/german-usenet.json) |
+| [Russian + Ukrainian Usenet](profiles/russian-ukrainian-usenet.md) | Usenet-only; Russian or Ukrainian audio, HDR over SDR, AV1 excluded; 2160p/1080p/720p (720p gated behind 5 x 1080p). | [`templates/russian-ukrainian-usenet.json`](templates/russian-ukrainian-usenet.json) |
+| [Japanese + Korean + Chinese/Mandarin Usenet](profiles/japanese-korean-chinese-usenet.md) | Usenet-only; Japanese, Korean, Chinese or Mandarin audio, English or German subtitles required, HDR over SDR, AV1 excluded; 2160p/1080p/720p (720p gated behind 5 x 1080p). | [`templates/japanese-korean-chinese-usenet.json`](templates/japanese-korean-chinese-usenet.json) |
 
 ## Quick start
 
