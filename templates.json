@@ -159,5 +159,60 @@
         ]
       }
     }
+  },
+  {
+    "metadata": {
+      "id": "jcsynthtux.japanese-korean-chinese-usenet",
+      "name": "Japanese + Korean + Chinese/Mandarin Usenet",
+      "description": "Usenet-only filtering and sorting profile driven by the Stream Expression Language (SEL).\n\n- Keeps only Usenet releases with **Japanese, Korean, Chinese or Mandarin** audio (both `Chinese` and `Mandarin` tags are matched to cover indexer naming differences).\n- Requires **English or German** subtitles.\n- Prefers **HDR** over SDR.\n- Limits resolution to **2160p / 1080p / 720p** — 720p is only shown when fewer than 5 x 1080p results exist.\n\nPriority order (highest first):\n1. CJK + HDR\n2. CJK + SDR\n\nSee the [README](https://github.com/JCSynthTux/AIOStreams-SEL-Templates) for full documentation.",
+      "author": "JCSynthTux",
+      "source": "external",
+      "version": "1.0.0",
+      "category": "Usenet",
+      "services": [],
+      "serviceRequired": false,
+      "changelogUrl": "https://raw.githubusercontent.com/JCSynthTux/AIOStreams-SEL-Templates/master/CHANGELOG.md"
+    },
+    "config": {
+      "excludedStreamExpressions": [
+        {
+          "expression": "/* Usenet only */ negate(type(streams, 'usenet', 'stremio-usenet'), streams)",
+          "enabled": true
+        },
+        {
+          "expression": "/* Resolution: 2160p / 1080p / 720p */ negate(resolution(streams, '2160p', '1080p', '720p'), streams)",
+          "enabled": true
+        },
+        {
+          "expression": "/* Audio: Japanese, Korean, Chinese or Mandarin */ negate(merge(language(streams, 'Japanese'), language(streams, 'Korean'), language(streams, 'Chinese'), language(streams, 'Mandarin')), streams)",
+          "enabled": true
+        },
+        {
+          "expression": "/* Subtitles: English or German required */ negate(merge(subtitle(streams, 'English'), subtitle(streams, 'German')), streams)",
+          "enabled": true
+        },
+        {
+          "expression": "/* 720p only when fewer than 5 x 1080p */ count(resolution(streams, '1080p')) >= 5 ? resolution(streams, '720p') : []",
+          "enabled": true
+        }
+      ],
+      "preferredStreamExpressions": [
+        {
+          "expression": "/* CJK + HDR */ visualTag(merge(language(streams, 'Japanese'), language(streams, 'Korean'), language(streams, 'Chinese'), language(streams, 'Mandarin')), 'HDR', 'DV', 'HDR10', 'HDR10+', 'HLG')",
+          "enabled": true
+        },
+        {
+          "expression": "/* CJK + SDR */ negate(visualTag(merge(language(streams, 'Japanese'), language(streams, 'Korean'), language(streams, 'Chinese'), language(streams, 'Mandarin')), 'HDR', 'DV', 'HDR10', 'HDR10+', 'HLG'), merge(language(streams, 'Japanese'), language(streams, 'Korean'), language(streams, 'Chinese'), language(streams, 'Mandarin')))",
+          "enabled": true
+        }
+      ],
+      "sortCriteria": {
+        "global": [
+          { "key": "streamExpressionMatched", "direction": "desc" },
+          { "key": "resolution", "direction": "desc" },
+          { "key": "quality", "direction": "desc" }
+        ]
+      }
+    }
   }
 ]

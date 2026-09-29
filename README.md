@@ -14,6 +14,7 @@ ready-to-import profiles so you don't have to re-derive the expressions yourself
 | [German + English Usenet (Dual Audio)](profiles/german-english-usenet.md) | Usenet-only; prioritises dual-audio (German + English) over single-audio, HDR over SDR; 2160p/1080p/720p (720p gated behind 5 x 1080p). | [`templates/german-english-usenet.json`](templates/german-english-usenet.json) |
 | [German Usenet](profiles/german-usenet.md) | Usenet-only; German audio only, HDR over SDR; 2160p/1080p/720p (720p gated behind 5 x 1080p). | [`templates/german-usenet.json`](templates/german-usenet.json) |
 | [Russian + Ukrainian Usenet](profiles/russian-ukrainian-usenet.md) | Usenet-only; Russian or Ukrainian audio, HDR over SDR; 2160p/1080p/720p (720p gated behind 5 x 1080p). | [`templates/russian-ukrainian-usenet.json`](templates/russian-ukrainian-usenet.json) |
+| [Japanese + Korean + Chinese/Mandarin Usenet](profiles/japanese-korean-chinese-usenet.md) | Usenet-only; Japanese, Korean, Chinese or Mandarin audio, English or German subtitles required, HDR over SDR; 2160p/1080p/720p (720p gated behind 5 x 1080p). | [`templates/japanese-korean-chinese-usenet.json`](templates/japanese-korean-chinese-usenet.json) |
 
 ## Quick start
 
@@ -35,6 +36,7 @@ AIOStreams-SEL-Templates/
 ├── templates/                 # Full importable templates (metadata + config)
 │   ├── german-english-usenet.json
 │   ├── german-usenet.json
+│   ├── japanese-korean-chinese-usenet.json
 │   └── russian-ukrainian-usenet.json
 ├── templates.json             # Aggregate: all templates, importable via a single URL
 ├── sel/                       # Raw SEL expression lists (synced-URL format)
@@ -46,6 +48,10 @@ AIOStreams-SEL-Templates/
 │   │   ├── excluded-stream-expressions.json
 │   │   ├── preferred-stream-expressions.json
 │   │   └── ranked-stream-expressions.json
+│   ├── japanese-korean-chinese-usenet/
+│   │   ├── excluded-stream-expressions.json
+│   │   ├── preferred-stream-expressions.json
+│   │   └── ranked-stream-expressions.json
 │   └── russian-ukrainian-usenet/
 │       ├── excluded-stream-expressions.json
 │       ├── preferred-stream-expressions.json
@@ -53,6 +59,7 @@ AIOStreams-SEL-Templates/
 ├── profiles/                  # Detailed documentation per profile
 │   ├── german-english-usenet.md
 │   ├── german-usenet.md
+│   ├── japanese-korean-chinese-usenet.md
 │   └── russian-ukrainian-usenet.md
 ├── docs/                      # General guides
 │   └── import-guide.md

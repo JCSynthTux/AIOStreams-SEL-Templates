@@ -1,0 +1,10 @@
+[
+  {
+    "expression": "/* CJK + HDR */ visualTag(merge(language(streams, 'Japanese'), language(streams, 'Korean'), language(streams, 'Chinese'), language(streams, 'Mandarin')), 'HDR', 'DV', 'HDR10', 'HDR10+', 'HLG')",
+    "enabled": true
+  },
+  {
+    "expression": "/* CJK + SDR */ negate(visualTag(merge(language(streams, 'Japanese'), language(streams, 'Korean'), language(streams, 'Chinese'), language(streams, 'Mandarin')), 'HDR', 'DV', 'HDR10', 'HDR10+', 'HLG'), merge(language(streams, 'Japanese'), language(streams, 'Korean'), language(streams, 'Chinese'), language(streams, 'Mandarin')))",
+    "enabled": true
+  }
+]

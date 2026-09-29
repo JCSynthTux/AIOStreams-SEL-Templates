@@ -1,6 +1,12 @@
 # Changelog
 
-## 1.2.0 (2026-08-14)
+## 1.3.0 (2026-09-29)
+
+### What's new
+
+- Added the **Japanese + Korean + Chinese/Mandarin Usenet** profile.
+- Japanese, Korean, Chinese or Mandarin audio (both `Chinese` and `Mandarin` tags matched), English or German subtitles required, HDR over SDR.
+- Resolution limited to 2160p / 1080p / 720p (720p only when fewer than 5 x 1080p results).
 
 ### What's new
 
