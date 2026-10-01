@@ -2,7 +2,7 @@
   "metadata": {
     "id": "jcsynthtux.german-usenet",
     "name": "German Usenet",
-    "description": "Usenet-only filtering and sorting profile driven by the Stream Expression Language (SEL).\n\n- Keeps only Usenet releases with **German** audio.\n- Prefers **HDR** over SDR.\n- Limits resolution to **2160p / 1080p / 720p** — 720p is only shown when fewer than 5 x 1080p results exist.\n- Subtitles are not required or filtered.\n\nPriority order (highest first):\n1. German + HDR\n2. German + SDR\n\nSee the [README](https://github.com/JCSynthTux/AIOStreams-SEL-Templates) for full documentation.",
+    "description": "Usenet-only filtering and sorting profile driven by the Stream Expression Language (SEL).\n\n- Keeps only Usenet releases that include a **German** audio track (additional audio languages are allowed).\n- Prefers **HDR** over SDR.\n- Limits resolution to **2160p / 1080p / 720p** — 720p is only shown when fewer than 5 x 1080p results exist.\n- Subtitles are not required or filtered.\n\nPriority order (highest first):\n1. German + HDR\n2. German + SDR\n\nSee the [README](https://github.com/JCSynthTux/AIOStreams-SEL-Templates) for full documentation.",
     "author": "JCSynthTux",
     "source": "external",
     "version": "1.0.0",
@@ -26,7 +26,7 @@
         "enabled": true
       },
       {
-        "expression": "/* Exclude AV1 (unsupported by clients) */ negate(encode(streams, 'AV1'), streams)",
+        "expression": "/* Exclude AV1 (unsupported by clients) */ encode(streams, 'AV1')",
         "enabled": true
       },
       {

@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+### What's new
+
+- fix(profiles): correct inverted AV1 exclusion (was keeping only AV1 instead of excluding it).
+- docs(profiles): clarify German Usenet profile keeps streams containing German audio, other languages allowed.
+
 ## 1.4.0 (2026-09-29)
 
 ### What's new

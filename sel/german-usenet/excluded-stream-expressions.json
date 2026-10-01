@@ -12,7 +12,7 @@
     "enabled": true
   },
   {
-    "expression": "/* Exclude AV1 (unsupported by clients) */ negate(encode(streams, 'AV1'), streams)",
+    "expression": "/* Exclude AV1 (unsupported by clients) */ encode(streams, 'AV1')",
     "enabled": true
   },
   {
