@@ -13,6 +13,7 @@ ready-to-import profiles so you don't have to re-derive the expressions yourself
 | --- | --- | --- |
 | [German + English Usenet (Dual Audio)](profiles/german-english-usenet.md) | Usenet-only; prioritises dual-audio (German + English) over single-audio, HDR over SDR, AV1 excluded; 2160p/1080p/720p (720p gated behind 5 x 1080p). | [`templates/german-english-usenet.json`](templates/german-english-usenet.json) |
 | [German Usenet](profiles/german-usenet.md) | Usenet-only; German audio required (additional audio languages allowed); HDR over SDR; AV1 excluded; 2160p/1080p/720p (720p gated behind 5 x 1080p). | [`templates/german-usenet.json`](templates/german-usenet.json) |
+| [English Usenet](profiles/english-usenet.md) | Usenet-only; English audio required (additional audio languages allowed); HDR over SDR; AV1 excluded; 2160p/1080p/720p (720p gated behind 5 x 1080p). | [`templates/english-usenet.json`](templates/english-usenet.json) |
 | [Russian + Ukrainian Usenet](profiles/russian-ukrainian-usenet.md) | Usenet-only; Russian or Ukrainian audio, HDR over SDR, AV1 excluded; 2160p/1080p/720p (720p gated behind 5 x 1080p). | [`templates/russian-ukrainian-usenet.json`](templates/russian-ukrainian-usenet.json) |
 | [Japanese + Korean + Chinese/Mandarin Usenet](profiles/japanese-korean-chinese-usenet.md) | Usenet-only; Japanese, Korean, Chinese or Mandarin audio, English or German subtitles required, HDR over SDR, AV1 excluded; 2160p/1080p/720p (720p gated behind 5 x 1080p). | [`templates/japanese-korean-chinese-usenet.json`](templates/japanese-korean-chinese-usenet.json) |
 
@@ -36,6 +37,7 @@ AIOStreams-SEL-Templates/
 ├── templates/                 # Full importable templates (metadata + config)
 │   ├── german-english-usenet.json
 │   ├── german-usenet.json
+│   ├── english-usenet.json
 │   ├── japanese-korean-chinese-usenet.json
 │   └── russian-ukrainian-usenet.json
 ├── templates.json             # Aggregate: all templates, importable via a single URL
@@ -45,6 +47,10 @@ AIOStreams-SEL-Templates/
 │   │   ├── preferred-stream-expressions.json
 │   │   └── ranked-stream-expressions.json
 │   ├── german-usenet/
+│   │   ├── excluded-stream-expressions.json
+│   │   ├── preferred-stream-expressions.json
+│   │   └── ranked-stream-expressions.json
+│   ├── english-usenet/
 │   │   ├── excluded-stream-expressions.json
 │   │   ├── preferred-stream-expressions.json
 │   │   └── ranked-stream-expressions.json
@@ -59,6 +65,7 @@ AIOStreams-SEL-Templates/
 ├── profiles/                  # Detailed documentation per profile
 │   ├── german-english-usenet.md
 │   ├── german-usenet.md
+│   ├── english-usenet.md
 │   ├── japanese-korean-chinese-usenet.md
 │   └── russian-ukrainian-usenet.md
 ├── docs/                      # General guides

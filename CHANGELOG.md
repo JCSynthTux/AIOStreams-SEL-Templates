@@ -4,6 +4,7 @@
 
 ### What's new
 
+- feat(profiles): add **English Usenet** profile — Usenet-only, English audio required (additional audio languages allowed), HDR over SDR, AV1 excluded; 2160p/1080p/720p (720p gated behind 5 x 1080p).
 - fix(profiles): correct inverted AV1 exclusion (was keeping only AV1 instead of excluding it).
 - docs(profiles): clarify German Usenet profile keeps streams containing German audio, other languages allowed.
 
